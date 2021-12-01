@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class calc2 {
 
     public static void main(String[] args) {
@@ -44,12 +45,13 @@ public class calc2 {
                     case '*':
                         result = numRom1 * numRom2;
                 }
-            } String res1 = toArab(result);
+            }
+            String res1 = toArab(result);
             System.out.println(res1);
         }
     }
 
-    private static int rom(String str) {
+    public static int rom(String str) {
         String[] rum = {"I", "II", "III", "IV", "V", "VI", "XII", "VIII", "IX", "X"};
         int num1 = 0;
         for (int i = 0; i < 10; i++)
@@ -58,11 +60,12 @@ public class calc2 {
             }
         return num1;
     }
-    public static String toArab (int number) {
+
+    public static String toArab(int number) {
         int[] arabArray = new int[]{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String[] romanArray = new String[]{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         StringBuilder res = new StringBuilder();
-        for (int i = 0; i < arabArray.length; i += 1) {
+        for (int i = 0; i < arabArray.length; i++) {
             while (number >= arabArray[i]) {
                 number -= arabArray[i];
                 res.append(romanArray[i]);
